@@ -8,7 +8,7 @@ It will loop and restart the timer until the user quits using 'q'.
 Each iteration will generate a suggested scramble before the user starts the timer.
 My `genScramble()` function is better than random, but still probably pretty bad.
 
-Starting and stopping is achieved by waiting for user to press enter (python input()).
+Starting and stopping is achieved by waiting for user to press enter using `input`.
 
 It will write the times to file in the format
 
