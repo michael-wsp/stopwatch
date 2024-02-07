@@ -69,6 +69,7 @@ def start():
         user_input = input('Press enter to continue or type q to quit\n')
     times.close()
 
+# testing
 
 def genScramble(n):
     moves = ['R', 'M', 'U', 'L', 'D']
