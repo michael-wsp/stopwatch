@@ -1,4 +1,4 @@
-#Stop Watch
+# Stop Watch
 
 Simple stopwatch timer implemented in python.
 It supports minutes, seconds, and milliseconds, but could easily be modified to support hours.
