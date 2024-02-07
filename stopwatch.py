@@ -33,20 +33,20 @@ def genScramble(n):
     moves = ['R', 'M', 'U', 'L', 'D']
     movelist = []
     s = len(moves)
-    last = 'null'
-    move = 'null'
+    last = Move()
+    move = Move()
     for _ in range(n):
-        while move == last:
+        while not move.checkGood(last):
             i = random.randrange(s)
-            move = moves[i]
+            move = Move(moves[i])
             m = random.randrange(3)
             if m == 1:
-                move += "'"
+                move.setMod("'")
             if m == 2:
-                move += '2'
+                move.setMod('2')
         last = move
         movelist.append(move)
-    print(' '.join(movelist))
+    print(' '.join(str(m) for m in movelist))
 
 
 def stop_watch():
@@ -68,27 +68,6 @@ def start():
         times.write(f'{t}\n')
         user_input = input('Press enter to continue or type q to quit\n')
     times.close()
-
-# testing
-
-def genScramble(n):
-    moves = ['R', 'M', 'U', 'L', 'D']
-    movelist = []
-    s = len(moves)
-    last = Move()
-    move = Move()
-    for _ in range(n):
-        while not move.checkGood(last):
-            i = random.randrange(s)
-            move = Move(moves[i])
-            m = random.randrange(3)
-            if m == 1:
-                move.setMod("'")
-            if m == 2:
-                move.setMod('2')
-        last = move
-        movelist.append(move)
-    print(' '.join(str(m) for m in movelist))
 
 
 start()
